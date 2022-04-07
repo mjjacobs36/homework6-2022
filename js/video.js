@@ -45,10 +45,12 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted === false) {
 		video.muted = true
+		this.innerHTML = "Unmute"
 		console.log("mute the video")
 	} else {
 		video.muted = false
 		console.log("unmute the video")
+		this.innerHTML = "Mute"
 	}
 });
 
@@ -61,13 +63,13 @@ document.querySelector("#slider").addEventListener("click", function() {
 //old school
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("old school design enabled")
-	document.getElementById("player1").style.filter = "grayscale(100%)"
-	document.getElementById("player1").style.width = "auto"
-	document.getElementById("player1").style.border = "solid 1px #000000"
-	document.getElementById("player1").style.outline = "solid 2px #000000"
-	document.getElementById("player1").style.outlineOffset = "2px"
-	document.getElementById("player1").style.borderRadius = "12px"
-	document.getElementById("player1").style.padding = "50px 0"
+	document.getElementById("player1").classList.add("oldSchool")
+});
+
+//original
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("original style")
+	document.getElementById("player1").classList.remove("oldSchool")
 });
 
 
